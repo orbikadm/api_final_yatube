@@ -24,3 +24,17 @@ class Comment(models.Model):
     text = models.TextField()
     created = models.DateTimeField(
         'Дата добавления', auto_now_add=True, db_index=True)
+
+
+class Follow(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    following = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Group(models.Model):
+    title = models.CharField('Название', max_length=200)
+    slug = models.SlugField('Слаг', unique=True)
+    description = models.TextField('Описание')
+
+    def __str__(self):
+        return self.title
