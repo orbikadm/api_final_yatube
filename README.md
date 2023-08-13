@@ -92,6 +92,10 @@ api/v1/posts/{post_id}/comments/
 api/v1/posts/{post_id}/comments/{comment_id}/
 ```
 
+Получение подписки и подписка на автора (GET, POST)
+```
+api/v1/follow/
+```
 
 <h2 align="center">Технологии</h2>
 <p>Проект реализован на языке Python версии 3.9.13</p>
