@@ -3,7 +3,7 @@ from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.filters import SearchFilter
 
-from posts.models import Post, Follow, Group, Comment, User
+from posts.models import Post, Group, User
 from .serializers import (
     CommentSerializer, GroupSerializer, FollowSerializer, PostSerializer
 )
@@ -21,7 +21,6 @@ class PostViewSet(ModelViewSet):
 
 
 class FollowViewSet(ModelViewSet):
-    queryset = Follow.objects.all()
     serializer_class = FollowSerializer
     filter_backends = (SearchFilter,)
     search_fields = ('following__username',)
